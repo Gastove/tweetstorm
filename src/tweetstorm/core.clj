@@ -3,10 +3,10 @@
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
             [tweetstorm.views.tweets :as tweets]
-            [tweetstorm.views.layouts :as layouts]))
+            [tweetstorm.views.layouts :as layouts]
+            [tweetstorm.data.twitter.stream :as tweetstream]))
 
 (defroutes app-routes
-  ;(GET "/" [] "Hello World")
   tweets/routes
   (route/resources "/")
   (route/not-found "Not Found"))
